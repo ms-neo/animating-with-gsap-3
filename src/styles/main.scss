@@ -1,0 +1,531 @@
+$blue-div:#345CF8;
+$gray-bg: rgba(205, 231, 245, 0.867);
+$gray-hover:rgba(133, 133, 133, 1);
+$med-font-size: 30px;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.scroller {
+    overflow-x: hidden;
+    width: 1440px;
+
+}
+
+#intro {
+    position: relative;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+
+    .nav {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+        img {
+            margin-left: 10vh;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3vh 0 3vh 30vh;
+            // position: relative;
+        }
+
+        li {
+            list-style: none;
+         
+        }
+
+        a {
+            padding: 2.5vh 50px;
+            font-size: 20px;
+            color: #000;
+            font-weight: 400;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        a::before{
+            // overflow: hidden;
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            right: 0;
+            width: 0;
+            height: 7px;
+            background: $blue-div;
+            z-index: 1000;
+            transform: translateX(-100%);
+            transition: 300ms ease-in-out;
+            opacity: 0;
+            
+        
+        }
+        a:hover::before{
+transform: translateX(0);
+opacity: 1;
+width: 100%;
+
+
+
+        }
+
+    }
+
+    .hero {
+        position: absolute;
+        display: flex;
+        top: 33vh;
+        left: 15vh;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        color: #fff;
+    }
+
+    .logo {
+        text-align: center;
+
+        img {
+            width: 50%;
+        }
+
+        h1 {
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-top: 2vh;
+        }
+    }
+
+    .ps5-features {
+        font-size: $med-font-size;
+        font-weight: 300;
+        margin-left: 20vh;
+
+        img {
+            width: 10%;
+        }
+
+        .flex-intro {
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            margin-right: 10vh;
+            padding: 2vh 0 0 5vh;
+            font-size: $med-font-size - 7px;
+        }
+    }
+
+
+    .games-imgs {
+        position: relative;
+        display: flex;
+        height: auto;
+        background-color: rgba(0, 0, 0, .6);
+        height: 99vh;
+        gap: 1rem;
+
+        img {
+            width: 300px;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: overlay;
+        }
+
+    }
+}
+
+
+
+
+.blue-line {
+    width: 100%;
+    height: 5px;
+    background: $blue-div;
+    position: absolute;
+    z-index: 100;
+}
+
+#full-product {
+overflow: hidden;
+    // height: 100vh;
+    // width: 100%;
+    // margin-top: 10vh;
+    // background: $gray-bg;
+    .full-product-img {
+        object-fit: cover;
+        width: 100%;
+        height: 60%;
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+
+}
+
+@mixin sections-titles {
+    font-size: $med-font-size +5;
+    margin: auto;
+    font-weight: 500;
+    width: 500px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+@mixin cards-access-bg {
+    background: rgba(230, 236, 238, 0.4);
+    position: absolute;
+}
+
+#accessories {
+    // height: 580vh;
+    margin-top: 5vh;
+    overflow: hidden;
+
+    .play {
+        @include sections-titles;
+    }
+
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        margin: 30vh 0;
+        border: none;
+        position: relative;
+        height: 70vh;
+
+    }
+
+    img {
+        width: 50%;
+        z-index: 1;
+    }
+
+    .content {
+        margin-left: 15vh;
+        z-index: 2;
+        width: 70%;
+    }
+
+    p {
+        font-weight: 300;
+        margin-top: 30px;
+    }
+
+    .controller {
+        img {
+            width: 110%;
+        }
+
+        .controller-bg {
+            width: 70%;
+            height: 80%;
+            @include cards-access-bg;
+
+        }
+    }
+
+    .headset {
+        height: 100vh;
+        position: relative;
+
+        .content {
+            order: 1;
+            margin-left: 0;
+        }
+
+        img {
+
+            margin-left: 15vh;
+        }
+
+        .headset-bg {
+            width: 100%;
+            height: 50%;
+            @include cards-access-bg;
+        }
+    }
+
+    .remote {
+        height: 100vh;
+
+        img {
+            width: 50%;
+            position: absolute;
+            top: 15vh;
+            // bottom: -15vh;
+            right: 30vh;
+        }
+
+        .content {
+            width: 40%;
+            position: absolute;
+            top: 12vh;
+            left: 10%;
+        }
+
+        .remote-bg {
+            width: 90%;
+            height: 60%;
+            @include cards-access-bg;
+            top: 20vh;
+            right: 0;
+
+        }
+    }
+
+    .camera {
+        height: 100vh;
+
+        img {
+            width: 50%;
+            position: absolute;
+            bottom: 25vh;
+            left: 30%;
+        }
+
+        .content {
+            position: absolute;
+            top: 10vh;
+            left: 20%;
+
+        }
+
+        .camera-bg {
+            width: 90%;
+            height: 70%;
+            @include cards-access-bg;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .duble-controller {
+
+        // height: 100vh;
+        img {
+            width: 100%;
+        }
+
+        .double-controller-bg {
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            top: 30%;
+            @include cards-access-bg;
+        }
+    }
+
+
+}
+
+
+
+#games {
+    // height: 270vh;
+    overflow: hidden;
+
+    .play {
+        @include sections-titles;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 35px 0;
+    }
+
+    .part {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .card {
+            padding: 40px;
+            border: none;
+        }
+
+        .card-title {
+            margin-top: 30px;
+            font-size: 30px;
+        }
+
+        .card-text {
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .fix {
+            padding: 12px 0;
+        }
+
+    }
+
+    .gray {
+        background: #dddd;
+    }
+
+}
+
+.footer {
+    overflow-x: hidden;
+
+    .footer-content {
+        // height: 40vh;
+        //   position: relative;
+        text-align: center;
+        padding: 20vh 0;
+        //   margin: auto;
+
+
+
+        h1 {
+            margin-bottom: 30px;
+            // display: inline-block;
+        }
+
+    }
+}
+
+@media screen and (max-width:766px) {
+    #full-product {
+        height: auto;
+    }
+
+    #accessories {
+        height: 320vh;
+
+        .card {
+            margin: 0;
+            height: 60vh;
+        }
+
+        h1 {
+            font-size: $med-font-size - 5px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        .content {
+            width: 100%;
+            margin-left: 5vh;
+        }
+
+        .controller {
+            img {
+                width: 120%;
+            }
+
+            .controller-bg {
+                width: 80%;
+                height: 70%;
+                background: rgba(237, 237, 237, 0.867);
+                position: absolute;
+
+            }
+        }
+
+        .headset {
+            .content {
+                order: 1;
+                margin-left: 0;
+            }
+
+            img {
+                margin-left: 5vh;
+            }
+
+            .headset-bg {
+                width: 100%;
+                height: 70%;
+                @include cards-access-bg;
+            }
+        }
+
+        .remote {
+
+            // height: 100vh;
+            img {
+                width: 80%;
+                top: 25vh;
+            }
+
+            .content {
+                top: 10vh;
+
+            }
+
+            .remote-bg {
+                height: 60%;
+                top: 20vh;
+            }
+        }
+
+        .camera {
+            margin: 30vh 0;
+
+            img {
+                width: 60%;
+                bottom: 0vh;
+                left: 0;
+            }
+
+            .content {
+                width: 60%;
+                top: 5vh;
+                left: 10%;
+
+            }
+
+            .camera-bg {
+                width: 90%;
+                height: 70%;
+            }
+        }
+
+    }
+
+    #games {
+        height: 450vh;
+
+        .part {
+            flex-direction: column;
+        }
+    }
+
+    .footer {
+        margin-top: 10vh;
+        height: 30vh;
+
+        h1 {
+            font-size: $med-font-size;
+        }
+    }
+
+}
