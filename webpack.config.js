@@ -1,17 +1,21 @@
 require('dotenv').config();
-const webpack=require('webpack');
+// const webpack=require('webpack');
+const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const OpenBrowserWebpackPlugin =require('open-browser-webpack-plugin');
-const ASSET_PATH =process.env.ASSET_PATH || '/';
+// const ASSET_PATH =process.env.ASSET_PATH || '/';
 
 
 module.exports = {
+    entry: './src/index.js',
     output: {
-        publicPath: ASSET_PATH,
-      },
+        publicPath:'',
+        path:path.join(__dirname + '/dist'),
+        filename: 'main.js'
+    },
     module: {
-        
+
         rules: [{
                 test: /\.js$/, //fining any javascriot file
                 exclude: /node_modules/,
@@ -52,9 +56,9 @@ module.exports = {
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
-        new webpack.DefinePlugin(
-            {'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH)}
-        ),
+        // new webpack.DefinePlugin(
+        //     {'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH)}
+        // ),
         // new HtmlWebpackPlugin()
     ]
 }
