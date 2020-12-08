@@ -40,7 +40,6 @@ body {
             justify-content: space-between;
             align-items: center;
             margin: 3vh 0 3vh 30vh;
-            // position: relative;
         }
 
         li {
@@ -59,7 +58,6 @@ body {
         }
 
         a::before{
-            // overflow: hidden;
             content: '';
             position: absolute;
             bottom: -7px;
@@ -68,7 +66,7 @@ body {
             height: 7px;
             background: $blue-div;
             z-index: 1000;
-            transform: translateX(-100%);
+            transform: translateX(100%);
             transition: 300ms ease-in-out;
             opacity: 0;
             
@@ -78,11 +76,7 @@ body {
 transform: translateX(0);
 opacity: 1;
 width: 100%;
-
-
-
         }
-
     }
 
     .hero {
@@ -163,10 +157,6 @@ width: 100%;
 
 #full-product {
 overflow: hidden;
-    // height: 100vh;
-    // width: 100%;
-    // margin-top: 10vh;
-    // background: $gray-bg;
     .full-product-img {
         object-fit: cover;
         width: 100%;
@@ -176,10 +166,6 @@ overflow: hidden;
         margin-left: auto;
         margin-right: auto;
     }
-
-
-
-
 }
 
 @mixin sections-titles {

@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const scrollBar = document.querySelector('.scroller');
 
 const bodyScrollBar = Scrollbar.init(scrollBar, {
-  damping: .1,
+  damping: .5,
   // delegateTo: document,
   alwaysShowTracks: true,
   // continuousScrolling:false
