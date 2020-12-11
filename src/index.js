@@ -57,18 +57,27 @@ hero.from(".par", {
   repeat: -1
 }, "-=.3");
 
+
 gsap.from('.full-product-img', {
-  y: -200,
+  y: -500,
   scale: 2,
   duration: 1,
-  scrollTrigger:{
-trigger: ".full-product-img",
-start:"top top",
-end:"center bottom",
-scrub:1,
-  } 
+  scrollTrigger: {
+    trigger: ".full-product-img",
+    start: "top top",
+    end: "center bottom",
+    scrub: 1,
+  }
 });
-
+gsap.from("#acceesories-heading", {
+  y: 300,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: "#accessories",
+    start: "top 80%",
+    toggleActions: "restart pause play reverse",
+  },
+});
 
 
 
@@ -84,16 +93,6 @@ let controller = gsap.timeline({
       scrub: 1,
     }
   }
-});
-
-gsap.from(".play", {
-  y: 400,
-  opacity: 0,
-  scrollTrigger: {
-    trigger: "#accessories",
-    start: "top 80%",
-    toggleActions: "restart pause play reverse",
-  },
 });
 
 controller.from(".controller-move", {
@@ -205,13 +204,16 @@ controller.from(".controller-move", {
   })
 
 
-gsap.from("#play", {
-  y: 400,
+gsap.from("#games-heading", {
+  y: 300,
   opacity: 0,
   scrollTrigger: {
     trigger: "#games",
-    start: "top 80%",
+    start: "top 90%",
+    end:"top top",
     toggleActions: "restart pause play reverse",
+    markers: true,
+    scrub: true
   },
 });
 
@@ -226,62 +228,80 @@ gsap.from('#games .blue-line', {
   },
 });
 
-
-let firstCards = gsap.timeline({
+let cards = gsap.timeline({
   defaults: {
-    ease: 'power1.Out',
+    ease: 'power3.inOut',
   }
-}).from('.firstCards .card', {
-  y: 500,
-  stagger: .2
-});
-
-ScrollTrigger.create({
-  trigger: ".firstCards",
-  start: "top 95%",
-  end: "top top+=100",
-  toggleActions: "restart pause play reverse",
-  scrub: true,
-  animation: firstCards
-});
-
-let secondCards = gsap.timeline({
-  defaults: {
-    ease: 'power1.Out',
-  }
-}).from('.secondCards .card', {
-  y: 500,
-  stagger: .2
 })
 
-ScrollTrigger.create({
-  trigger: ".secondCards",
-  start: "top center",
-  end: "top top+=100",
-  toggleActions: "restart pause play reverse",
-  scrub: true,
-  animation: secondCards
-});
-
-let thirdCards = gsap.timeline({
-  defaults: {
-    duration: 1,
-    ease: 'power1.Out',
+cards.from('#games .card', {
+  y: 150,
+  stagger:.3,
+  scrollTrigger: {
+    trigger: "#games",
+    start: "top 98%",
+    end:"bottom bottom",
+    toggleActions: "restart pause play reverse",
+    scrub: true,
   }
-}).from('.thirdCards .card', {
-  y: 400,
-  stagger: .2
 })
 
-ScrollTrigger.create({
-  trigger: ".thirdCards",
-  start: "top 40%",
-  end: "top 100",
-  toggleActions: "restart pause play reverse",
-  // markers:true,
-  scrub: true,
-  animation: thirdCards
-})
+
+// let firstCards = gsap.timeline({
+//   defaults: {
+//     ease: 'power1.Out',
+//   }
+// }).from('.firstCards .card', {
+//   y: 500,
+//   stagger: .2
+// });
+
+// ScrollTrigger.create({
+//   trigger: ".firstCards",
+//   start: "top 95%",
+//   end: "top top+=100",
+//   toggleActions: "restart pause play reverse",
+//   scrub: true,
+//   animation: firstCards
+// });
+
+// let secondCards = gsap.timeline({
+//   defaults: {
+//     ease: 'power1.Out',
+//   }
+// }).from('.secondCards .card', {
+//   y: 500,
+//   stagger: .2
+// })
+
+// ScrollTrigger.create({
+//   trigger: ".secondCards",
+//   start: "top center",
+//   end: "top top+=100",
+//   toggleActions: "restart pause play reverse",
+//   scrub: true,
+//   animation: secondCards
+// });
+
+// let thirdCards = gsap.timeline({
+//   defaults: {
+//     duration: 1,
+//     ease: 'power1.Out',
+//   }
+// }).from('.thirdCards .card', {
+//   y: 400,
+//   stagger: .2
+// })
+
+// ScrollTrigger.create({
+//   trigger: ".thirdCards",
+//   start: "top 40%",
+//   end: "top 100",
+//   toggleActions: "restart pause play reverse",
+//   // markers:true,
+//   scrub: true,
+//   animation: thirdCards
+// })
 
 let footer = gsap.timeline({
   defaults: {

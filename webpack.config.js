@@ -3,9 +3,6 @@ require('dotenv').config();
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const OpenBrowserWebpackPlugin =require('open-browser-webpack-plugin');
-// const ASSET_PATH =process.env.ASSET_PATH || '/';
-
 
 module.exports = {
     entry: './src/index.js',

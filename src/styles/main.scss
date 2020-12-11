@@ -1,151 +1,32 @@
 $blue-div:#345CF8;
-$gray-bg: rgba(205, 231, 245, 0.867);
+$gray-bg: rgba(237, 242, 245, 0.867);
 $gray-hover:rgba(133, 133, 133, 1);
+$white-font:#fff;
+$small-font-size:14px;
 $med-font-size: 30px;
+$phone-font-heading:25px;
+$large-font-size:35px;
 
 
 * {
     padding: 0;
     margin: 0;
-    box-sizing: content-box;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: $small-font-size;
 }
 
 .scroller {
     overflow-x: hidden;
-    width: 1440px;
-
 }
 
-#intro {
+main {
+    width: 100%;
+    overflow-x: hidden;
     position: relative;
-    overflow: hidden;
-    position: relative;
-    height: 100vh;
-
-    .nav {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-
-        img {
-            margin-left: 10vh;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 3vh 0 3vh 30vh;
-        }
-
-        li {
-            list-style: none;
-         
-        }
-
-        a {
-            padding: 2.5vh 50px;
-            font-size: 20px;
-            color: #000;
-            font-weight: 400;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        a::before{
-            content: '';
-            position: absolute;
-            bottom: -7px;
-            right: 0;
-            width: 0;
-            height: 7px;
-            background: $blue-div;
-            z-index: 1000;
-            transform: translateX(100%);
-            transition: 300ms ease-in-out;
-            opacity: 0;
-            
-        
-        }
-        a:hover::before{
-transform: translateX(0);
-opacity: 1;
-width: 100%;
-        }
-    }
-
-    .hero {
-        position: absolute;
-        display: flex;
-        top: 33vh;
-        left: 15vh;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-        color: #fff;
-    }
-
-    .logo {
-        text-align: center;
-
-        img {
-            width: 50%;
-        }
-
-        h1 {
-            font-weight: 300;
-            letter-spacing: 8px;
-            margin-top: 2vh;
-        }
-    }
-
-    .ps5-features {
-        font-size: $med-font-size;
-        font-weight: 300;
-        margin-left: 20vh;
-
-        img {
-            width: 10%;
-        }
-
-        .flex-intro {
-            display: flex;
-            align-items: center;
-        }
-
-        p {
-            margin-right: 10vh;
-            padding: 2vh 0 0 5vh;
-            font-size: $med-font-size - 7px;
-        }
-    }
-
-
-    .games-imgs {
-        position: relative;
-        display: flex;
-        height: auto;
-        background-color: rgba(0, 0, 0, .6);
-        height: 99vh;
-        gap: 1rem;
-
-        img {
-            width: 300px;
-            height: 100%;
-            object-fit: cover;
-            mix-blend-mode: overlay;
-        }
-
-    }
 }
-
-
-
 
 .blue-line {
     width: 100%;
@@ -155,28 +36,161 @@ width: 100%;
     z-index: 100;
 }
 
+img {
+    width: 50%;
+    object-fit: cover;
+}
+
+#intro {
+ 
+    img {
+        width: 20%;
+        object-fit: cover;
+        // margin-bottom: 10px;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2vh 0;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2vh;
+    }
+
+    li {
+
+        list-style: none;
+
+    }
+
+    a {
+        padding: 10px 25px;
+        font-size: $small-font-size;
+        color: #000;
+        font-weight: 400;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+    }
+
+    a::before {
+        content: '';
+        position: absolute;
+        bottom: -26px;
+        right: 0;
+        width: 0;
+        height: 7px;
+        background: $blue-div;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: 300ms ease-in-out;
+        opacity: 0;
+    }
+
+    a:hover::before {
+        transform: translateX(0);
+        opacity: 1;
+        width: 100%;
+    }
+
+
+}
+
+#hero {
+    display: block;
+    position: relative;
+    overflow-x: hidden;
+    height: 80vh;
+    text-align: center;
+    color: $white-font;
+
+    .sub-hero {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .logo {
+        display: block;
+        margin: 10vh 0;
+
+        img {
+            width: 40%;
+        }
+
+        h1 {
+            font-size: $med-font-size;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+    }
+
+    .ps5-features {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: $phone-font-heading - 8px;
+        font-weight: 300;
+
+        .flex-intro {
+            display: flex;
+            margin-left: 10vh;
+            align-items: flex-start;
+        }
+
+        .icons {
+            width: 10%;
+            margin-right: 10px;
+            margin-top: -.5vh;
+        }
+    }
+
+    .games-imgs {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        height: 100%;
+        background-color: rgba(18, 20, 34, .6);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: overlay;
+        }
+    }
+
+}
+
 #full-product {
-overflow: hidden;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+
     .full-product-img {
         object-fit: cover;
-        width: 100%;
-        height: 60%;
-        display: block;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+        width: 105%;
+        height: 105%;
     }
+
 }
 
 @mixin sections-titles {
-    font-size: $med-font-size +5;
-    margin: auto;
+    font-size: $med-font-size - 5px;
+    margin: 5vh 0;
     font-weight: 500;
-    width: 500px;
-    height: 80px;
     display: flex;
     justify-content: center;
 }
+
 
 @mixin cards-access-bg {
     background: rgba(230, 236, 238, 0.4);
@@ -184,9 +198,17 @@ overflow: hidden;
 }
 
 #accessories {
-    // height: 580vh;
-    margin-top: 5vh;
     overflow: hidden;
+    width: 100%;
+    position: relative;
+    height: 100%;
+
+    img {
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .play {
         @include sections-titles;
@@ -194,146 +216,57 @@ overflow: hidden;
 
     .card {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         align-items: center;
-        margin: 30vh 0;
+        margin: 12vh 0;
         border: none;
         position: relative;
-        height: 70vh;
-
-    }
-
-    img {
-        width: 50%;
-        z-index: 1;
+        z-index: 10;
+        padding: 5vh 0;
     }
 
     .content {
-        margin-left: 15vh;
-        z-index: 2;
-        width: 70%;
+        padding: 0 4vh;
+    }
+
+    h1 {
+        font-size: $phone-font-heading;
     }
 
     p {
+        font-size: $small-font-size;
         font-weight: 300;
         margin-top: 30px;
+
     }
 
-    .controller {
-        img {
-            width: 110%;
-        }
-
-        .controller-bg {
-            width: 70%;
-            height: 80%;
-            @include cards-access-bg;
-
-        }
+    .headset-move {
+        width: 50%;
     }
 
-    .headset {
-        height: 100vh;
-        position: relative;
-
-        .content {
-            order: 1;
-            margin-left: 0;
-        }
-
-        img {
-
-            margin-left: 15vh;
-        }
-
-        .headset-bg {
-            width: 100%;
-            height: 50%;
-            @include cards-access-bg;
-        }
+    .remote-move {
+        width: 90%;
     }
 
-    .remote {
-        height: 100vh;
-
-        img {
-            width: 50%;
-            position: absolute;
-            top: 15vh;
-            // bottom: -15vh;
-            right: 30vh;
-        }
-
-        .content {
-            width: 40%;
-            position: absolute;
-            top: 12vh;
-            left: 10%;
-        }
-
-        .remote-bg {
-            width: 90%;
-            height: 60%;
-            @include cards-access-bg;
-            top: 20vh;
-            right: 0;
-
-        }
+    .acceesories-bg {
+        background-color: $gray-bg;
+        width: 100%;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
-
-    .camera {
-        height: 100vh;
-
-        img {
-            width: 50%;
-            position: absolute;
-            bottom: 25vh;
-            left: 30%;
-        }
-
-        .content {
-            position: absolute;
-            top: 10vh;
-            left: 20%;
-
-        }
-
-        .camera-bg {
-            width: 90%;
-            height: 70%;
-            @include cards-access-bg;
-            top: 0;
-            left: 0;
-        }
-    }
-
-    .duble-controller {
-
-        // height: 100vh;
-        img {
-            width: 100%;
-        }
-
-        .double-controller-bg {
-            position: absolute;
-            width: 100%;
-            height: 60%;
-            top: 30%;
-            @include cards-access-bg;
-        }
-    }
-
 
 }
 
 
-
 #games {
-    // height: 270vh;
     overflow: hidden;
+    height: 100%;
 
     .play {
         @include sections-titles;
+        margin: 0;
     }
 
     img {
@@ -346,29 +279,24 @@ overflow: hidden;
     }
 
     .part {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+
 
         .card {
-            padding: 40px;
+            padding: 2vh;
             border: none;
         }
 
         .card-title {
             margin-top: 30px;
-            font-size: 30px;
+            font-size: $phone-font-heading;
         }
 
         .card-text {
             font-weight: 300;
             margin-bottom: 20px;
         }
-
-        .fix {
-            padding: 12px 0;
-        }
-
     }
 
     .gray {
@@ -377,141 +305,168 @@ overflow: hidden;
 
 }
 
-.footer {
+#footer {
     overflow-x: hidden;
+    text-align: center;
 
     .footer-content {
-        // height: 40vh;
-        //   position: relative;
-        text-align: center;
-        padding: 20vh 0;
-        //   margin: auto;
+        padding: 15vh 2vh;
+        margin-bottom: 10vh;
+    }
 
-
-
-        h1 {
-            margin-bottom: 30px;
-            // display: inline-block;
-        }
-
+    h1 {
+        margin-bottom: 30px;
+        font-size: $small-font-size;
     }
 }
 
-@media screen and (max-width:766px) {
-    #full-product {
-        height: auto;
+// // ------------------------ PHONE VERSION -----------------------------------
+
+@media screen and (min-width:768px) {
+    #intro {
+        text-align: center;
+
+        img {
+            width: 10%;
+            margin-left: 10vh;
+            margin-top: -10px;
+        }
+
+        .nav {
+            flex-direction: row;
+            // text-align: center;
+        }
+
+        .nav-links {
+            margin-left: 38vh;
+        }
+
+        a {
+            padding: 10px 40px;
+            font-size: $small-font-size + 4px;
+        }
+    }
+
+
+    #hero {
+        height: 100vh;
+
+        .sub-hero {
+            top: 20vh;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-top: -3vh;
+
+            h1 {
+                font-size: $large-font-size;
+            }
+        }
+
+        .ps5-features {
+            font-size: $phone-font-heading;
+
+            .flex-intro {
+                padding: 20px;
+            }
+
+            .icons {
+                margin-right: 8px;
+                margin-top: -15px;
+            }
+        }
+
+    }
+
+    @mixin sections-titles {
+        font-size: $large-font-size;
     }
 
     #accessories {
-        height: 320vh;
+
+        img {
+            width: 100%;
+        }
+
+        .play {
+            @include sections-titles;
+        }
 
         .card {
-            margin: 0;
-            height: 60vh;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            margin: 30vh 0;
+            padding: 0 13vh;
         }
 
         h1 {
-            font-size: $med-font-size - 5px;
+            font-size: $med-font-size;
         }
 
         p {
-            font-size: 14px;
+            font-size: $small-font-size + 3px;
+
         }
 
-        .content {
-            width: 100%;
-            margin-left: 5vh;
+        .content{
+            margin-top: -12vh;
+        }
+        .headset .content {
+            margin-top: -16vh;
+            order: 1;
         }
 
-        .controller {
-            img {
-                width: 120%;
-            }
-
-            .controller-bg {
-                width: 80%;
-                height: 70%;
-                background: rgba(237, 237, 237, 0.867);
-                position: absolute;
-
-            }
-        }
-
-        .headset {
-            .content {
-                order: 1;
-                margin-left: 0;
-            }
-
-            img {
-                margin-left: 5vh;
-            }
-
-            .headset-bg {
-                width: 100%;
-                height: 70%;
-                @include cards-access-bg;
-            }
-        }
-
-        .remote {
-
-            // height: 100vh;
-            img {
-                width: 80%;
-                top: 25vh;
-            }
-
-            .content {
-                top: 10vh;
-
-            }
-
-            .remote-bg {
-                height: 60%;
-                top: 20vh;
-            }
+        .remote img{
+                width: 100%;  
         }
 
         .camera {
-            margin: 30vh 0;
-
-            img {
-                width: 60%;
-                bottom: 0vh;
-                left: 0;
-            }
+            margin-bottom: 50vh;
 
             .content {
-                width: 60%;
-                top: 5vh;
-                left: 10%;
-
+                order: 2;
+                margin-top:1vh;
             }
 
-            .camera-bg {
-                width: 90%;
-                height: 70%;
+            img {
+                transform: rotateY(180deg);
+            width: 90%;
+            }
+        }
+
+        .duble-controller {
+
+            .content {
+                margin-top: -30vh;
             }
         }
 
     }
 
     #games {
-        height: 450vh;
+        .play {
+            @include sections-titles;
+            margin: 0;
+        }
 
         .part {
-            flex-direction: column;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .card {
+            padding: 8vh;
+            border: none;
         }
     }
 
-    .footer {
-        margin-top: 10vh;
-        height: 30vh;
+}
 
-        h1 {
-            font-size: $med-font-size;
-        }
+#footer {
+
+    h1 {
+        font-size: $large-font-size;
     }
-
 }

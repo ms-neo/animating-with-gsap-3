@@ -1,43 +1,58 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 14px;
 }
 
 .scroller {
   overflow-x: hidden;
-  width: 1440px;
 }
 
-#intro {
+main {
+  width: 100%;
+  overflow-x: hidden;
   position: relative;
-  overflow: hidden;
-  position: relative;
-  height: 100vh;
+}
+
+.blue-line {
+  width: 100%;
+  height: 5px;
+  background: #345CF8;
+  position: absolute;
+  z-index: 100;
+}
+
+img {
+  width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#intro img {
+  width: 20%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #intro .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 2vh 0;
 }
 
-#intro .nav img {
-  margin-left: 10vh;
-}
-
-#intro .nav .nav-links {
+#intro .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,16 +62,16 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 3vh 0 3vh 30vh;
+  margin-top: 2vh;
 }
 
-#intro .nav li {
+#intro li {
   list-style: none;
 }
 
-#intro .nav a {
-  padding: 2.5vh 50px;
-  font-size: 20px;
+#intro a {
+  padding: 10px 25px;
+  font-size: 14px;
   color: #000;
   font-weight: 400;
   text-decoration: none;
@@ -64,10 +79,10 @@ body {
   overflow: hidden;
 }
 
-#intro .nav a::before {
+#intro a::before {
   content: '';
   position: absolute;
-  bottom: -7px;
+  bottom: -26px;
   right: 0;
   width: 0;
   height: 7px;
@@ -80,122 +95,134 @@ body {
   opacity: 0;
 }
 
-#intro .nav a:hover::before {
+#intro a:hover::before {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   opacity: 1;
   width: 100%;
 }
 
-#intro .hero {
+#hero {
+  display: block;
+  position: relative;
+  overflow-x: hidden;
+  height: 80vh;
+  text-align: center;
+  color: #fff;
+}
+
+#hero .sub-hero {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  top: 33vh;
-  left: 15vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 1000;
-  color: #fff;
+  z-index: 10;
 }
 
-#intro .logo {
-  text-align: center;
+#hero .logo {
+  display: block;
+  margin: 10vh 0;
 }
 
-#intro .logo img {
-  width: 50%;
+#hero .logo img {
+  width: 40%;
 }
 
-#intro .logo h1 {
-  font-weight: 300;
-  letter-spacing: 8px;
-  margin-top: 2vh;
-}
-
-#intro .ps5-features {
+#hero .logo h1 {
   font-size: 30px;
-  font-weight: 300;
-  margin-left: 20vh;
+  letter-spacing: 2px;
+  margin-top: 4px;
 }
 
-#intro .ps5-features img {
-  width: 10%;
-}
-
-#intro .ps5-features .flex-intro {
+#hero .ps5-features {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 17px;
+  font-weight: 300;
 }
 
-#intro .ps5-features p {
-  margin-right: 10vh;
-  padding: 2vh 0 0 5vh;
-  font-size: 23px;
-}
-
-#intro .games-imgs {
-  position: relative;
+#hero .ps5-features .flex-intro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 99vh;
-  gap: 1rem;
+  margin-left: 10vh;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-#intro .games-imgs img {
-  width: 300px;
+#hero .ps5-features .icons {
+  width: 10%;
+  margin-right: 10px;
+  margin-top: -.5vh;
+}
+
+#hero .games-imgs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  height: 100%;
+  background-color: rgba(18, 20, 34, 0.6);
+}
+
+#hero .games-imgs img {
+  width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   mix-blend-mode: overlay;
 }
 
-.blue-line {
-  width: 100%;
-  height: 5px;
-  background: #345CF8;
-  position: absolute;
-  z-index: 100;
-}
-
 #full-product {
   overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 #full-product .full-product-img {
   -o-object-fit: cover;
      object-fit: cover;
+  width: 105%;
+  height: 105%;
+}
+
+#accessories {
+  overflow: hidden;
   width: 100%;
-  height: 60%;
+  position: relative;
+  height: 100%;
+}
+
+#accessories img {
+  width: 80%;
   display: block;
-  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
-#accessories {
-  margin-top: 5vh;
-  overflow: hidden;
-}
-
 #accessories .play {
-  font-size: 35px;
-  margin: auto;
+  font-size: 25px;
+  margin: 5vh 0;
   font-weight: 500;
-  width: 500px;
-  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,149 +234,65 @@ body {
 #accessories .card {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 30vh 0;
+  margin: 12vh 0;
   border: none;
   position: relative;
-  height: 70vh;
-}
-
-#accessories img {
-  width: 50%;
-  z-index: 1;
+  z-index: 10;
+  padding: 5vh 0;
 }
 
 #accessories .content {
-  margin-left: 15vh;
-  z-index: 2;
-  width: 70%;
+  padding: 0 4vh;
+}
+
+#accessories h1 {
+  font-size: 25px;
 }
 
 #accessories p {
+  font-size: 14px;
   font-weight: 300;
   margin-top: 30px;
 }
 
-#accessories .controller img {
-  width: 110%;
+#accessories .headset-move {
+  width: 50%;
 }
 
-#accessories .controller .controller-bg {
-  width: 70%;
-  height: 80%;
-  background: rgba(230, 236, 238, 0.4);
-  position: absolute;
+#accessories .remote-move {
+  width: 90%;
 }
 
-#accessories .headset {
-  height: 100vh;
-  position: relative;
-}
-
-#accessories .headset .content {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  margin-left: 0;
-}
-
-#accessories .headset img {
-  margin-left: 15vh;
-}
-
-#accessories .headset .headset-bg {
+#accessories .acceesories-bg {
+  background-color: rgba(237, 242, 245, 0.867);
   width: 100%;
-  height: 50%;
-  background: rgba(230, 236, 238, 0.4);
-  position: absolute;
-}
-
-#accessories .remote {
-  height: 100vh;
-}
-
-#accessories .remote img {
-  width: 50%;
-  position: absolute;
-  top: 15vh;
-  right: 30vh;
-}
-
-#accessories .remote .content {
-  width: 40%;
-  position: absolute;
-  top: 12vh;
-  left: 10%;
-}
-
-#accessories .remote .remote-bg {
-  width: 90%;
-  height: 60%;
-  background: rgba(230, 236, 238, 0.4);
-  position: absolute;
-  top: 20vh;
-  right: 0;
-}
-
-#accessories .camera {
-  height: 100vh;
-}
-
-#accessories .camera img {
-  width: 50%;
-  position: absolute;
-  bottom: 25vh;
-  left: 30%;
-}
-
-#accessories .camera .content {
-  position: absolute;
-  top: 10vh;
-  left: 20%;
-}
-
-#accessories .camera .camera-bg {
-  width: 90%;
-  height: 70%;
-  background: rgba(230, 236, 238, 0.4);
+  height: 300px;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-#accessories .duble-controller img {
-  width: 100%;
-}
-
-#accessories .duble-controller .double-controller-bg {
-  position: absolute;
-  width: 100%;
-  height: 60%;
-  top: 30%;
-  background: rgba(230, 236, 238, 0.4);
-  position: absolute;
-}
-
 #games {
   overflow: hidden;
+  height: 100%;
 }
 
 #games .play {
-  font-size: 35px;
-  margin: auto;
+  font-size: 25px;
+  margin: 5vh 0;
   font-weight: 500;
-  width: 500px;
-  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 0;
 }
 
 #games img {
@@ -362,24 +305,20 @@ body {
 }
 
 #games .part {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
 
 #games .part .card {
-  padding: 40px;
+  padding: 2vh;
   border: none;
 }
 
 #games .part .card-title {
   margin-top: 30px;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 #games .part .card-text {
@@ -387,115 +326,144 @@ body {
   margin-bottom: 20px;
 }
 
-#games .part .fix {
-  padding: 12px 0;
-}
-
 #games .gray {
   background: #dddd;
 }
 
-.footer {
+#footer {
   overflow-x: hidden;
-}
-
-.footer .footer-content {
   text-align: center;
-  padding: 20vh 0;
 }
 
-.footer .footer-content h1 {
+#footer .footer-content {
+  padding: 15vh 2vh;
+  margin-bottom: 10vh;
+}
+
+#footer h1 {
   margin-bottom: 30px;
+  font-size: 14px;
 }
 
-@media screen and (max-width: 766px) {
-  #full-product {
-    height: auto;
+@media screen and (min-width: 768px) {
+  #intro {
+    text-align: center;
   }
-  #accessories {
-    height: 320vh;
+  #intro img {
+    width: 10%;
+    margin-left: 10vh;
+    margin-top: -10px;
   }
-  #accessories .card {
-    margin: 0;
-    height: 60vh;
+  #intro .nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-  #accessories h1 {
+  #intro .nav-links {
+    margin-left: 38vh;
+  }
+  #intro a {
+    padding: 10px 40px;
+    font-size: 18px;
+  }
+  #hero {
+    height: 100vh;
+  }
+  #hero .sub-hero {
+    top: 20vh;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #hero .logo {
+    margin-top: -3vh;
+  }
+  #hero .logo h1 {
+    font-size: 35px;
+  }
+  #hero .ps5-features {
     font-size: 25px;
   }
+  #hero .ps5-features .flex-intro {
+    padding: 20px;
+  }
+  #hero .ps5-features .icons {
+    margin-right: 8px;
+    margin-top: -15px;
+  }
+  #accessories img {
+    width: 100%;
+  }
+  #accessories .play {
+    font-size: 35px;
+  }
+  #accessories .card {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 30vh 0;
+    padding: 0 13vh;
+  }
+  #accessories h1 {
+    font-size: 30px;
+  }
   #accessories p {
-    font-size: 14px;
+    font-size: 17px;
   }
   #accessories .content {
-    width: 100%;
-    margin-left: 5vh;
-  }
-  #accessories .controller img {
-    width: 120%;
-  }
-  #accessories .controller .controller-bg {
-    width: 80%;
-    height: 70%;
-    background: rgba(237, 237, 237, 0.867);
-    position: absolute;
+    margin-top: -12vh;
   }
   #accessories .headset .content {
+    margin-top: -16vh;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    margin-left: 0;
-  }
-  #accessories .headset img {
-    margin-left: 5vh;
-  }
-  #accessories .headset .headset-bg {
-    width: 100%;
-    height: 70%;
-    background: rgba(230, 236, 238, 0.4);
-    position: absolute;
   }
   #accessories .remote img {
-    width: 80%;
-    top: 25vh;
-  }
-  #accessories .remote .content {
-    top: 10vh;
-  }
-  #accessories .remote .remote-bg {
-    height: 60%;
-    top: 20vh;
+    width: 100%;
   }
   #accessories .camera {
-    margin: 30vh 0;
-  }
-  #accessories .camera img {
-    width: 60%;
-    bottom: 0vh;
-    left: 0;
+    margin-bottom: 50vh;
   }
   #accessories .camera .content {
-    width: 60%;
-    top: 5vh;
-    left: 10%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-top: 1vh;
   }
-  #accessories .camera .camera-bg {
+  #accessories .camera img {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
     width: 90%;
-    height: 70%;
   }
-  #games {
-    height: 450vh;
+  #accessories .duble-controller .content {
+    margin-top: -30vh;
+  }
+  #games .play {
+    font-size: 35px;
+    margin: 0;
   }
   #games .part {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
-  .footer {
-    margin-top: 10vh;
-    height: 30vh;
+  #games .card {
+    padding: 8vh;
+    border: none;
   }
-  .footer h1 {
-    font-size: 30px;
-  }
+}
+
+#footer h1 {
+  font-size: 35px;
 }
 /*# sourceMappingURL=main.css.map */
