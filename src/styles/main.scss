@@ -42,7 +42,7 @@ img {
 }
 
 #intro {
- 
+
     img {
         width: 20%;
         object-fit: cover;
@@ -284,8 +284,9 @@ img {
 
 
         .card {
-            padding: 2vh;
+            padding: 4vh;
             border: none;
+     background: $gray-bg;
         }
 
         .card-title {
@@ -299,10 +300,6 @@ img {
         }
     }
 
-    .gray {
-        background: #dddd;
-    }
-
 }
 
 #footer {
@@ -310,17 +307,17 @@ img {
     text-align: center;
 
     .footer-content {
-        padding: 15vh 2vh;
-        margin-bottom: 10vh;
+        padding: 5vh 2vh;
+        margin: 12vh 0;
     }
 
     h1 {
         margin-bottom: 30px;
-        font-size: $small-font-size;
+        font-size: $phone-font-heading;
     }
 }
 
-// // ------------------------ PHONE VERSION -----------------------------------
+// // ------------------------ web VERSION -----------------------------------
 
 @media screen and (min-width:768px) {
     #intro {
@@ -411,16 +408,17 @@ img {
 
         }
 
-        .content{
+        .content {
             margin-top: -12vh;
         }
+
         .headset .content {
             margin-top: -16vh;
             order: 1;
         }
 
-        .remote img{
-                width: 100%;  
+        .remote img {
+            width: 100%;
         }
 
         .camera {
@@ -428,12 +426,12 @@ img {
 
             .content {
                 order: 2;
-                margin-top:1vh;
+                margin-top: 1vh;
             }
 
             img {
                 transform: rotateY(180deg);
-            width: 90%;
+                width: 90%;
             }
         }
 
@@ -462,11 +460,13 @@ img {
         }
     }
 
-}
+    #footer {
 
-#footer {
-
-    h1 {
-        font-size: $large-font-size;
+        h1 {
+            font-size: $large-font-size;
+        }
+    
     }
+    
 }
+

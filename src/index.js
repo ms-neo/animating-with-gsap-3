@@ -1,9 +1,5 @@
 import './styles/main.scss';
 import Scrollbar from 'smooth-scrollbar';
-// import SplitText  from 'gsap/SplitText'
-
-// const text = document.querySelector('.footer-text');
-// import Scrollbar from 'smooth-scrollbar';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,9 +7,7 @@ const scrollBar = document.querySelector('.scroller');
 
 const bodyScrollBar = Scrollbar.init(scrollBar, {
   damping: .5,
-  // delegateTo: document,
   alwaysShowTracks: true,
-  // continuousScrolling:false
 });
 
 ScrollTrigger.scrollerProxy('.scroller', {
@@ -29,7 +23,7 @@ ScrollTrigger.scrollerProxy('.scroller', {
 bodyScrollBar.addListener(ScrollTrigger.update);
 ScrollTrigger.defaults()
 
-
+//---------------section #hero -------------------//
 
 gsap.from('.logo', {
   opacity: 0,
@@ -66,9 +60,12 @@ gsap.from('.full-product-img', {
     trigger: ".full-product-img",
     start: "top top",
     end: "center bottom",
-    scrub: 1,
+    scrub: true,
   }
 });
+
+
+//---------------section #Accessories -------------------//
 gsap.from("#acceesories-heading", {
   y: 300,
   opacity: 0,
@@ -78,8 +75,6 @@ gsap.from("#acceesories-heading", {
     toggleActions: "restart pause play reverse",
   },
 });
-
-
 
 let controller = gsap.timeline({
   defaults: {
@@ -145,7 +140,6 @@ controller.from(".controller-move", {
       start: "top center",
       end: "top center",
       toggleActions: "restart pause restart ",
-      // markers: true,
       scrub: 1
     }
   }).from(".remote .content", {
@@ -203,7 +197,7 @@ controller.from(".controller-move", {
     }
   })
 
-
+//---------------section #Games -------------------//
 gsap.from("#games-heading", {
   y: 300,
   opacity: 0,
@@ -212,7 +206,7 @@ gsap.from("#games-heading", {
     start: "top 90%",
     end:"top top",
     toggleActions: "restart pause play reverse",
-    markers: true,
+    // markers: true,
     scrub: true
   },
 });
@@ -247,62 +241,6 @@ cards.from('#games .card', {
 })
 
 
-// let firstCards = gsap.timeline({
-//   defaults: {
-//     ease: 'power1.Out',
-//   }
-// }).from('.firstCards .card', {
-//   y: 500,
-//   stagger: .2
-// });
-
-// ScrollTrigger.create({
-//   trigger: ".firstCards",
-//   start: "top 95%",
-//   end: "top top+=100",
-//   toggleActions: "restart pause play reverse",
-//   scrub: true,
-//   animation: firstCards
-// });
-
-// let secondCards = gsap.timeline({
-//   defaults: {
-//     ease: 'power1.Out',
-//   }
-// }).from('.secondCards .card', {
-//   y: 500,
-//   stagger: .2
-// })
-
-// ScrollTrigger.create({
-//   trigger: ".secondCards",
-//   start: "top center",
-//   end: "top top+=100",
-//   toggleActions: "restart pause play reverse",
-//   scrub: true,
-//   animation: secondCards
-// });
-
-// let thirdCards = gsap.timeline({
-//   defaults: {
-//     duration: 1,
-//     ease: 'power1.Out',
-//   }
-// }).from('.thirdCards .card', {
-//   y: 400,
-//   stagger: .2
-// })
-
-// ScrollTrigger.create({
-//   trigger: ".thirdCards",
-//   start: "top 40%",
-//   end: "top 100",
-//   toggleActions: "restart pause play reverse",
-//   // markers:true,
-//   scrub: true,
-//   animation: thirdCards
-// })
-
 let footer = gsap.timeline({
   defaults: {
     ease: 'back',
@@ -310,12 +248,12 @@ let footer = gsap.timeline({
       trigger: ".footer-content",
       start: "top bottom",
       end: "top top",
-      // markers:true,
       scrub: true,
     }
   }
 });
 
+//---------------section #Footer-------------------//
 
 footer.from("#footer-text", {
   scale: 0,
