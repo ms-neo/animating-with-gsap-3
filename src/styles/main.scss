@@ -7,7 +7,6 @@ $med-font-size: 30px;
 $phone-font-heading:25px;
 $large-font-size:35px;
 
-
 * {
     padding: 0;
     margin: 0;
@@ -22,6 +21,7 @@ body {
     overflow-x: hidden;
 }
 
+// -------------- PHONE VERSION ----------------- //
 main {
     width: 100%;
     overflow-x: hidden;
@@ -42,11 +42,9 @@ img {
 }
 
 #intro {
-
     img {
         width: 20%;
         object-fit: cover;
-        // margin-bottom: 10px;
     }
 
     .nav {
@@ -64,9 +62,7 @@ img {
     }
 
     li {
-
         list-style: none;
-
     }
 
     a {
@@ -98,8 +94,6 @@ img {
         opacity: 1;
         width: 100%;
     }
-
-
 }
 
 #hero {
@@ -155,7 +149,6 @@ img {
     }
 
     .games-imgs {
-  
         height: 100%;
         background-color: rgba(18, 20, 34, .6);
 
@@ -166,7 +159,6 @@ img {
             mix-blend-mode: overlay;
         }
     }
-
 }
 
 #full-product {
@@ -236,7 +228,6 @@ img {
         font-size: $small-font-size;
         font-weight: 300;
         margin-top: 30px;
-
     }
 
     .headset-move {
@@ -255,9 +246,7 @@ img {
         top: 0;
         left: 0;
     }
-
 }
-
 
 #games {
     overflow: hidden;
@@ -298,7 +287,6 @@ img {
             margin-bottom: 20px;
         }
     }
-
 }
 
 #footer {
@@ -316,7 +304,7 @@ img {
     }
 }
 
-// // ------------------------ web VERSION -----------------------------------
+// // ------------------------ WEB VERSION ----------------------------------- //
 
 @media screen and (min-width:768px) {
     #intro {
@@ -342,7 +330,6 @@ img {
             font-size: $small-font-size + 4px;
         }
     }
-
 
     #hero {
         height: 100vh;
@@ -374,7 +361,6 @@ img {
                 margin-top: -15px;
             }
         }
-
     }
 
     @mixin sections-titles {
@@ -404,7 +390,6 @@ img {
 
         p {
             font-size: $small-font-size + 3px;
-
         }
 
         .content {
@@ -440,7 +425,6 @@ img {
                 margin-top: -30vh;
             }
         }
-
     }
 
     #games {
@@ -460,12 +444,9 @@ img {
     }
 
     #footer {
-
         h1 {
             font-size: $large-font-size;
         }
-    
-    }
-    
+    } 
 }
 

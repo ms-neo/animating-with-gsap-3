@@ -5,6 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const scrollBar = document.querySelector('.scroller');
 
+// setting the smooth scroller 
 const bodyScrollBar = Scrollbar.init(scrollBar, {
   damping: .5,
   alwaysShowTracks: true,
@@ -24,7 +25,6 @@ bodyScrollBar.addListener(ScrollTrigger.update);
 ScrollTrigger.defaults()
 
 //---------------section #hero -------------------//
-
 gsap.from('.logo', {
   opacity: 0,
   duration: 1.5,
@@ -51,7 +51,6 @@ hero.from(".par", {
   repeat: -1
 }, "-=.3");
 
-
 gsap.from('.full-product-img', {
   y: -500,
   scale: 2,
@@ -63,7 +62,6 @@ gsap.from('.full-product-img', {
     scrub: true,
   }
 });
-
 
 //---------------section #Accessories -------------------//
 gsap.from("#acceesories-heading", {
